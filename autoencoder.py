@@ -1,18 +1,11 @@
 import os
 import pandas as pd
 import numpy as np
-import random
-import torch 
-import torchvision
+import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import torchvision.datasets as dsets
 from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt 
-from sklearn import metrics
-from sklearn.metrics import confusion_matrix
-import torchvision.transforms as transforms
-from torch.autograd import Variable
+
 
 os.system('nvidia-smi -L')
 
