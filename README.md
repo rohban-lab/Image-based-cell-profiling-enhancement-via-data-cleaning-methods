@@ -24,7 +24,7 @@ In `final_find_representation.py` profiles were created with different data clea
 
 ## Deep learning
 In `train_test_split.py` five mechanisms were chosen and fifty random drugs with these mechnisms were picked for train/test data.
-After splittind and savind train, validation and test data, different models such as simple fully connected network with mixup technique (`mixup.py`), simple fully connected network with HSIC loss (`hsic.py`) and various versions of AutoEncoder(`autoencoder.py`) like denoising autoencoder trained on data.
+After splitting and saving train, validation and test data, different models such as simple fully connected network with mixup technique (`mixup.py`), simple fully connected network with HSIC loss (`hsic.py`) and various versions of AutoEncoder(`autoencoder.py`) like denoising autoencoder trained on data.
 When trained model saved, by using `deep_representation.py`, the profile for final evalution is the output of the model (The input of the model is the cleaned profile created in previous step).
 
 
