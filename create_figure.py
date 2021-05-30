@@ -16,11 +16,12 @@ remove_outlier_remove_toxic_hbos_regress = [22.028520357497516, 19.1997920930383
 
 
 
-plt.plot(k,remove_outlier_remove_toxic_regress, marker = 'o', label ='without hbos outlier detection', color = 'dimgray')
-plt.plot(k,remove_outlier_remove_toxic_hbos_regress,marker = 'o' ,label ='with hbos outlier detection', color ='firebrick' )
+plt.plot(k,remove_outlier, marker = 'o', label ='without regressing out', color = 'dimgray')
+plt.plot(k,remove_outlier_regress,marker = 'o' ,label ='with regressing out ', color ='firebrick' )
 plt.xlabel('k top percent')
 plt.ylabel('odds ratio')
 # plt.title('title')
 plt.legend()
 # plt.show()
-plt.savefig('figures/plots/remove_outlier_toxic_regress_vs_remove_outlier_toxic_hbos_regress.png')
+plt.title('Case: without outlier drugs')
+plt.savefig('figures/plots/remove_outlier_vs_remove_outlierregress.png')
