@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 plt.style.use('bmh')
-k = [0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9,1,2,3,4,5]
+k = [0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9,1]
 
 simple = [8.637380350240969, 5.919063953102612, 4.719596794833262, 4.065512002301901, 3.6781240436003153, 3.290452155292344, 3.1658011431060067, 2.985483737084289, 2.8362326916350162, 2.6648148797080506, 1.9760097314088085, 1.7896712599610547, 1.6727411108446557, 1.6264975472333334]
 simple_regress = [9.409712612166645, 6.2860447818658, 5.019241750407726, 4.243313053954107, 3.6957863782693234, 3.3490154422750833, 3.115631587673701, 2.9197353899539635, 2.709845228887418, 2.629832706389391, 2.1301432158944413, 1.8819253679757508, 1.7861383899538412, 1.694735649352968]
@@ -16,12 +16,12 @@ remove_outlier_remove_toxic_hbos_regress = [22.028520357497516, 19.1997920930383
 
 
 
-plt.plot(k,remove_outlier, marker = 'o', label ='without regressing out', color = 'dimgray')
-plt.plot(k,remove_outlier_regress,marker = 'o' ,label ='with regressing out ', color ='firebrick' )
+plt.plot(k,remove_outlier_remove_toxic[:-4], marker = 'o', label ='without regressing out', color = 'dimgray')
+plt.plot(k,remove_outlier_remove_toxic_regress[:-4],marker = 'o' ,label ='with regressing out', color ='firebrick' )
 plt.xlabel('k top percent')
 plt.ylabel('odds ratio')
 # plt.title('title')
 plt.legend()
 # plt.show()
-plt.title('Case: without outlier drugs')
-plt.savefig('figures/plots/remove_outlier_vs_remove_outlierregress.png')
+plt.title('Case: without oulier and toxic drugs')
+plt.savefig('figures/plots/remove_outlier_toxic_vs_remove_outlier_toxicregress.png')
