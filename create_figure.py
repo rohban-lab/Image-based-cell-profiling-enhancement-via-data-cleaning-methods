@@ -13,15 +13,23 @@ remove_outlier_remove_toxic_regress = [22.028520357497516, 15.614109468937876, 1
 
 remove_outlier_remove_toxic_hbos = [19.03409573578057, 17.73440450660948, 15.142358159460665, 12.864679610446002, 11.060095399639188, 10.528130460104833, 10.3748425898164, 9.265801069662619, 8.576103746179028, 8.412760097919216, 6.399401142297976, 5.28659662093853, 4.80703631641932, 4.082853841734222]
 remove_outlier_remove_toxic_hbos_regress = [22.028520357497516, 19.199792093038365, 14.21844021259226, 13.204271406861157, 12.673919027124413, 11.193443616837, 10.758070694388287, 9.927180342553553, 9.454823416242958, 8.808000207003877, 6.73894695241979, 5.425330724423318, 4.699632259010011, 4.434667721637095]
+dae350200 = [1.985369469240437, 0.9755937755937756, 1.981955975158127, 1.9802590926919956, 2.189775165230631, 2.3279284361963555, 2.432225087837333, 3.173582295988935, 3.2878298909925414, 2.943687553746997, 3.3445043288471887, 3.1833131444441163, 3.160173913994807, 3.0939570060913857]
+mixup = [0.0, 2.486560008618832, 1.981955975158127, 1.4741914494175876, 1.9843701156611442, 1.9841298097411249, 1.840944546872784, 1.7313179009101518, 1.8764242853290183, 1.7852654103933316, 2.0656551849826865, 1.8143792670093564, 1.7184452844488332, 1.7996276305223873]
+# plt.plot(k,remove_outlier_remove_toxic[:-4], marker = 'o', label ='without regressing out', color = 'dimgray')
+# plt.plot(k,remove_outlier_remove_toxic_regress[:-4],marker = 'o' ,label ='with regressing out', color ='firebrick' )
+# plt.xlabel('k top percent')
+# plt.ylabel('odds ratio')
+# # plt.title('title')
+# plt.legend()
+# # plt.show()
+# plt.title('Case: without oulier and toxic drugs')
+# plt.savefig('figures/plots/remove_outlier_toxic_vs_remove_outlier_toxicregress.png')
 
-
-
-plt.plot(k,remove_outlier_remove_toxic[:-4], marker = 'o', label ='without regressing out', color = 'dimgray')
-plt.plot(k,remove_outlier_remove_toxic_regress[:-4],marker = 'o' ,label ='with regressing out', color ='firebrick' )
+plt.plot(k,mixup[:-4], marker = 'o', color = 'firebrick')
 plt.xlabel('k top percent')
 plt.ylabel('odds ratio')
 # plt.title('title')
 plt.legend()
 # plt.show()
-plt.title('Case: without oulier and toxic drugs')
-plt.savefig('figures/plots/remove_outlier_toxic_vs_remove_outlier_toxicregress.png')
+plt.title('Case : Mixup Technique')
+plt.savefig('figures/plots/mixup.png')
