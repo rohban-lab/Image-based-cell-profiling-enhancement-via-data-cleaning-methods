@@ -56,7 +56,15 @@ for f in files:
   data['plate'] = f
   data = data[data['Metadata_broad_sample'].isin(drugs)]
   data = data[data.columns.intersection(selected_cols)]
-  
+
+  ######### OUTLIER DETECTION
+  X = pd.read_csv('outlier_without_regress/'+f)
+  print(data.shape, X.shape)
+  data['outlier'] = list(X['outlier'])
+  data = data[data['outlier'] == 0]
+  del data['outlier']
+  #################
+
   ###### REGRESS OUT
   cell_area_col = list(data['Cells_AreaShape_Area'])
   cell_area = np.array(cell_area_col).reshape(-1,1)
@@ -72,13 +80,7 @@ for f in files:
 
   temp_l.append(len(data))
 
-  ######### OUTLIER DETECTION
-  X = pd.read_csv('outlier_without_regress/'+f)
-  print(data.shape, X.shape)
-  data['outlier'] = list(X['outlier'])
-  data = data[data['outlier'] == 0]
-  del data['outlier']
-  #################
+
 
   ##### aggregate on well, plate 
   data = data.groupby(['Metadata_Well','plate','Metadata_broad_sample']).agg(np.median)
